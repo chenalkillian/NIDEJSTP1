@@ -124,6 +124,7 @@ res.json(rows);
 
 }
 
+
 async function ADDuser(){
     let nom=document.getElementById('nom').value
     let prenom=document.getElementById('prenom').value
