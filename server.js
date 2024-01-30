@@ -129,7 +129,7 @@ async function ADDuser(){
     let nom=document.getElementById('nom').value
     let prenom=document.getElementById('prenom').value
     let email=document.getElementById('email').value
-    console.log(email)
+
     let response = await fetch('http://localhost:8000/user', {
     method: 'POST',
      headers: {
