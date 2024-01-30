@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+    
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+    
+        button {
+            padding: 12px;
+            margin: 8px;
+            background-color: #4caf50;
+            color: #fff;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: #fff;
+            white-space: pre-wrap;
+        }
+        #function {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+    </style>
+    
+
+</head>
+
+<body>
+    <h1>Test API</h1>
+
+    <button onclick="GetUsers()">Get Users</button>
+    <button onclick="ADDuser()">Add User</button>
+    <input id="nom" type="text">
+    <input id="prenom" type="text">
+    <input id="email" type="text">
+
+
+    <div id="function"></div>
+
+    <script defer src="./server.js">
+     
+          
+    </script>
+</body>
+
+</html>
+
