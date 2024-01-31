@@ -1,13 +1,25 @@
-
-
 const express = require('express')
 const app = express()
-const mariadb=require('./mariadb.js')
+const mariadb=require('./databses/mariadb.js')
  app.use(express.json())
  var cors = require('cors')
-const { format } = require('path')
  app.use(cors())
-    //Route API
+
+
+//Require de mes routes
+const utilisateur=require('./routes/utilisateurRoute.js')
+
+const USER=require('./routes/utilisateurRoute.js')
+const TECHNO=require('./routes/utilisateurRoute.js')
+
+    //Routes API
+    app.use('/api',utilisateur)
+
+    app.use('/user',USER)
+
+    app.use('/techno',TECHNO)
+
+
     app.get('/poke',async(req,res)=>{
         
 	const conn = await mariadb.getConnection();
@@ -114,32 +126,6 @@ app.get("/commentaireDATEinNferieure", async (req, res) => {
 res.json(rows);
   });
 
-
-  
-  async function GetUsers() {
-
-    const response = await fetch('http://localhost:8000/poke');
-    const data = await response.json();
-    document.getElementById('function').innerHTML = JSON.stringify(data, null, 2);
-
-}
-
-
-async function ADDuser(){
-    let nom=document.getElementById('nom').value
-    let prenom=document.getElementById('prenom').value
-    let email=document.getElementById('email').value
-
-    let response = await fetch('http://localhost:8000/user', {
-    method: 'POST',
-     headers: {
-      'Content-Type': 'application/json;charset=utf-8'
-                 },
-
-body: JSON.stringify({nom:nom,
-prenom:prenom,
-email:email})
-});}
 
 
 app.listen(8000,()=>{
